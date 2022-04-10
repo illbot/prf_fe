@@ -1,0 +1,29 @@
+<h1 mat-dialog-title >Add item</h1>
+<mat-dialog-content>
+    <form>
+        <mat-form-field style="width: 100%;">
+            <mat-label>Title</mat-label>
+            <input matInput 
+                [(ngModel)]="title" 
+                [ngModelOptions]="{standalone:true}">
+        </mat-form-field>
+        <mat-form-field style="width: 100%;">
+            <mat-label>Description</mat-label>
+            <textarea matInput 
+                [(ngModel)]="description" 
+                [ngModelOptions]="{standalone:true}"></textarea>
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button
+    (click)="onNoClick()">
+        Close
+    </button>
+    <button mat-raised-button
+    color="primary"
+    (click)="onSaveClick()">
+        <mat-icon>save</mat-icon>
+        Add
+    </button>      
+</mat-dialog-actions>

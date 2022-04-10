@@ -1,0 +1,40 @@
+<div style="width: 100%;">
+
+    <h1 style="display: inline-block; width: 100%;">
+        Termékek
+
+        <button mat-button
+            *ngIf="isAdmin"
+            (click)="onAddClick()"
+            style="float: right;">
+            <mat-icon>
+                add
+            </mat-icon>
+            Add
+        </button>
+        
+        <div class="search-box" style="float: right;">
+            <button class="btn-search">
+                <mat-icon>search</mat-icon>
+            </button>
+            <input type="text" 
+            class="input-search" 
+            placeholder="Type to Search..." 
+            [(ngModel)]="searchInput"
+            (change)="searchInputChange($event)">
+        </div>
+    </h1>
+
+    <div class="row gy-4">
+        <app-webshop-item class="col-3" 
+        *ngFor="let i of displayItems" 
+        [item]="i"
+        [userIsAdmin]="isAdmin"
+        (onDelete)="onDelete($event)"
+        (onEdit)="onEdit($event)"
+        >
+        </app-webshop-item>
+    </div>
+
+
+</div>

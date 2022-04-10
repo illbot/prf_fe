@@ -1,0 +1,37 @@
+<mat-card
+style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+padding: 15px;">
+    <mat-card-title>
+        <h2>{{item?.title}}</h2>
+    </mat-card-title>
+
+    <mat-card-content>
+        <p class="overflow">{{item?.description}}</p>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+        <button mat-icon-button
+            *ngIf="!userIsAdmin"
+            (click)="onShoppingCartClick()">
+            <mat-icon class="material-icons">
+                add_shopping_cart
+            </mat-icon>
+        </button>
+
+        <button mat-icon-button
+            *ngIf="userIsAdmin"
+            (click)="onEditBtn()">
+            <mat-icon class="material-icons">
+                edit
+            </mat-icon>
+        </button>
+
+        <button mat-icon-button
+            *ngIf="userIsAdmin"
+            (click)="onDeleteBtn()">
+            <mat-icon class="material-icons" color="warn">
+                delete_outline
+            </mat-icon>
+        </button>
+      </mat-card-actions>
+</mat-card>
