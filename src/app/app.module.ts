@@ -22,6 +22,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatDialogModule} from '@angular/material/dialog';
 import { AddItemComponent } from './home/add-item/add-item.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 
 
@@ -33,6 +34,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     LoginComponent,
     RegisterComponent,
     AddItemComponent,
+    ShoppingCartComponent,
 //    MatSidenavModule
   ],
   imports: [
