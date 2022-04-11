@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, filter } from 'rxjs';
 import { WebshopItem } from '../models/models';
 import { LoginService } from './login.service';
 import { StorageService } from './storage.service';
@@ -24,6 +24,11 @@ export class CartService implements OnInit {
       this.cart.push(item)
       this._cart.next(Object.assign([], this.cart))
     } 
+  }
+
+  removeFromCart(item:WebshopItem){
+    this.cart = this.cart.filter(data => data.id !== item.id);
+    this._cart.next(Object.assign([], this.cart))
   }
 
   constructor(

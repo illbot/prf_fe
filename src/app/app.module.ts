@@ -23,7 +23,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { AddItemComponent } from './home/add-item/add-item.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -53,7 +53,8 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     MatSnackBarModule,
     MatBadgeModule,
     MatDialogModule,
-    MatGridListModule
+    MatGridListModule,
+    MatTableModule
   ],
   providers: [
     CartService

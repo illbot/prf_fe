@@ -1,1 +1,62 @@
-<p>shopping-cart works!</p>
+<div style="width: 100%;">
+    <h1 style="display: inline-block; width: 100%;">  
+        Kosár
+    </h1>
+
+    <div class="row">
+
+        <div class="col-6" *ngIf="dataSource.length === 0">
+            <h3> A kosarad üres! </h3>
+        </div>
+
+        <table *ngIf="dataSource.length !== 0" mat-table [dataSource]="dataSource" class="mat-elevation-z8 col-6">
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="title">
+              <th mat-header-cell *matHeaderCellDef> No. </th>
+              <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="description">
+              <th mat-header-cell *matHeaderCellDef> Description </th>
+              <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef> Actions </th>
+              <td mat-cell *matCellDef="let element">
+                  <button mat-button
+                    (click)="selectedWebshopItem = element">
+                    <mat-icon>
+                      visibility
+                    </mat-icon>
+                  </button>
+                  <button mat-button
+                    (click)="deleteItem(element)">
+                    <mat-icon color="warn">
+                        delete_outline
+                    </mat-icon>
+                  </button>
+              </td>
+            </ng-container>
+          
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          
+          <mat-card *ngIf="selectedWebshopItem" class="col-5 mat-elevation-z8" style="margin-left: 8%;">
+            <h1>{{selectedWebshopItem.title}}</h1>
+
+            <p>
+                {{selectedWebshopItem.description}}
+            </p>
+          </mat-card>
+          
+    </div>
+</div>
