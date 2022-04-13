@@ -30,7 +30,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class ShoppingCartComponent implements OnInit {
 
-  displayedColumns: string[] = ['title','description','actions'];
+  displayedColumns: string[] = ['title','actions'];
   dataSource:WebshopItem[] = [];
   selectedWebshopItem: WebshopItem | undefined;
 

@@ -1,0 +1,10 @@
+{
+    "/server": {
+    "target": "https://prf-webshop-ibb-fe.herokuapp.com/",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+        "^/server": ""
+    }
+    }
+}

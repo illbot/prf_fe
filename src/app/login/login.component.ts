@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
 
   login(): void {
     this.service.login(this.username,this.password).subscribe((data:any)=>{
-      console.log(data)
       this.storage.saveUser(data.user);
       this.router.navigateByUrl('/home');
       this.service.isLoggedIn$.next(true);

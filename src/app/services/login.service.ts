@@ -26,6 +26,10 @@ export class LoginService {
     })
   }
 
+  logout(){
+    return this.http.post(environment.API_URL + environment.LOGOUT, {}, {withCredentials:true})
+  }
+
   getStatus(){
     return this.http.get(environment.API_URL + environment.AUTH_TEST);
   }
