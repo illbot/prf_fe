@@ -1,7 +1,7 @@
 {
   "name": "beadando",
   "version": "0.0.0",
-  "engines":{
+  "engines": {
     "node": "16.13.2",
     "npm": "8.1.2"
   },
@@ -29,6 +29,7 @@
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
     "express": "^4.17.3",
+    "firebase": "^9.7.0",
     "path": "^0.12.7",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
